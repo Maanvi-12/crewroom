@@ -1,3 +1,4 @@
+from api.teams import router as teams_router
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -18,3 +19,5 @@ app.add_middleware(
 @app.get("/health")
 def health() -> dict[str, str]:
     return {"status": "ok"}
+
+app.include_router(teams_router)
