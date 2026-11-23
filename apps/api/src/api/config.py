@@ -4,6 +4,7 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     database_url: str = "postgresql+psycopg://crewroom:crewroom@localhost:5432/crewroom"
     cors_origins: str = "http://localhost:3000"
+    dev_user_id: str = "dev-user"
 
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
